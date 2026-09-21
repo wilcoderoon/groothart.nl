@@ -14,84 +14,113 @@
     box-sizing:border-box;
 }
 
-html,body{
+html, body{
+    width:100%;
     height:100%;
-    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
     background:#000;
-    color:white;
+    color:#fff;
 }
 
 .hero{
     position:relative;
+    width:100%;
     height:100vh;
-    overflow:hidden;
 }
 
 .hero img{
     position:absolute;
-    width:100%;
+    top:0;
+    right:0;
+    width:65%;
     height:100%;
-    object-fit:cover;
-    object-position:center center;
+    object-fit:contain;
+    object-position:right center;
 }
 
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.55);
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,0.98) 0%,
+        rgba(0,0,0,0.92) 35%,
+        rgba(0,0,0,0.55) 60%,
+        rgba(0,0,0,0.10) 100%
+    );
 }
 
 .content{
-    position:absolute;
-    top:50%;
-    left:8%;
-    transform:translateY(-50%);
-    max-width:700px;
+    position:relative;
     z-index:10;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:8%;
+    max-width:700px;
 }
 
 h1{
-    font-size:6rem;
-    letter-spacing:10px;
-    margin-bottom:25px;
+    font-size:7rem;
+    letter-spacing:12px;
+    margin-bottom:20px;
 }
 
-.subtitle{
+.tagline{
     font-size:1.8rem;
-    color:#e0e0e0;
-    margin-bottom:35px;
+    color:#e5e5e5;
+    margin-bottom:40px;
     font-weight:300;
 }
 
 .text{
     font-size:1.2rem;
     line-height:1.8;
-    max-width:650px;
     color:#f0f0f0;
 }
 
 .highlight{
-    color:#ffb74d;
+    color:#d4a24f;
+    font-weight:bold;
+}
+
+@media (max-width: 1200px){
+
+    .hero img{
+        width:75%;
+    }
+
+    h1{
+        font-size:5rem;
+    }
 }
 
 @media (max-width: 900px){
 
-    h1{
-        font-size:3.5rem;
-        letter-spacing:4px;
+    .hero img{
+        width:100%;
+        opacity:0.5;
     }
 
-    .subtitle{
-        font-size:1.2rem;
+    .content{
+        max-width:none;
+        padding:40px;
+    }
+
+    h1{
+        font-size:3.5rem;
+        letter-spacing:6px;
+    }
+
+    .tagline{
+        font-size:1.3rem;
     }
 
     .text{
         font-size:1rem;
-    }
-
-    .content{
-        left:5%;
-        right:5%;
     }
 }
 
@@ -110,27 +139,31 @@ h1{
 
         <h1>GROOTHART</h1>
 
-        <div class="subtitle">
-            Een naam met geschiedenis. Een nieuw muzikaal avontuur.
+        <div class="tagline">
+            Een naam met geschiedenis.<br>
+            Een nieuw muzikaal avontuur.
         </div>
 
         <div class="text">
-            Jaren geleden begon Groothart vanuit de liefde voor muziek,
-            samen spelen en optreden.
+
+            Groothart krijgt een nieuw leven.
 
             <br><br>
 
-            Vandaag krijgt die naam een nieuw leven.
+            Wat ooit begon als een bandnaam groeit uit tot een nieuw
+            muzikaal project. Een plek waar creativiteit, samenwerking,
+            live muziek en nieuwe ideeën samenkomen.
 
             <br><br>
 
             Onder de naam <span class="highlight">Groothart</span>
-            ontstaat een nieuw muzikaal project. Een plek voor nieuwe ideeën,
-            nieuwe nummers, samenwerking en creativiteit.
+            wordt gewerkt aan nieuwe muziek, nieuwe verhalen en nieuwe
+            mogelijkheden.
 
             <br><br>
 
             De eerste hoofdstukken worden momenteel geschreven.
+
         </div>
 
     </div>
